@@ -5,6 +5,7 @@ $(document).ready(
         clickNext();
       }
     );
+    $('.nav i').click(clickCircle);
     $('.prev').click(
       function () {
         clickPrev();
@@ -58,4 +59,12 @@ function clickPrev() {
       circleActive.removeClass('active');
       circlePrev.addClass('active');
     }
+}
+function clickCircle() {
+  var positon = $(this).index();
+  var element = $('img').eq(positon);
+  $('.nav i').removeClass('active');
+  $('img').removeClass('active');
+  element.addClass('active');
+  $(this).addClass('active');
 }
